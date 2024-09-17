@@ -27,5 +27,12 @@ module.exports = defineConfig({
         channel: 'chrome', // This ensures it uses Google Chrome, not just Chromium
       },
     },
+    {
+      name: 'webkit', // WebKit browser configuration
+      use: {
+        browserName: 'webkit',
+        viewport: null, // No predefined viewport
+      },
+    },
   ],
 });
