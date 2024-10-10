@@ -28,6 +28,9 @@ suites:
     params:
       browserName: "chrome"
       project: "chrome"
+    env:
+      SAUCE_USERNAME: $SAUCE_USERNAME
+      SAUCE_ACCESS_KEY: $SAUCE_ACCESS_KEY
   # - name: "Webkit Win"
   #   platformName: "Windows 11"
   #   screenResolution: "1440x900"

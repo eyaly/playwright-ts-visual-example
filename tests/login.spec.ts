@@ -2,6 +2,7 @@ import { test, expect } from '@playwright/test';
 import { sauceVisualCheck } from '@saucelabs/visual-playwright';
 
 test.beforeEach(async ({ page }, testInfo) => {
+  console.log(`In before Each. SAUCE_USERNAME: ${process.env.SAUCE_USERNAME}`);
   await page.goto('/');
   await expect(page).toHaveTitle(/Swag Labs/);
 })
@@ -21,7 +22,7 @@ test('should be able to login with standard user', async ({ page }, testInfo) =>
   // for the video
   await page.waitForTimeout(2000);
 
-  // await sauceVisualCheck(page, testInfo, "Inventory Page");
+  await sauceVisualCheck(page, testInfo, "Inventory Page");
 });
 
 test('should not be able to login with a locked user', async ({ page }, testInfo) => {
@@ -35,6 +36,5 @@ test('should not be able to login with a locked user', async ({ page }, testInfo
       await expect(page.getByTestId('error')).toContainText('Sorry, this user has been locked out.');
       // for the video
       await page.waitForTimeout(2000);
-
-//   // await sauceVisualCheck(page, testInfo, "Locked User Error Message");
+      await sauceVisualCheck(page, testInfo, "Locked User Error Message");
 });
