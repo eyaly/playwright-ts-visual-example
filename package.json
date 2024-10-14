@@ -5,7 +5,10 @@
   "main": "index.js",
   "scripts": {
     "local": "npx playwright test",
-    "sauce": "saucectl run -c ./.sauce/config.yml"
+    "local-happy": "npx playwright test --project=\"Happy Tests\"",
+    "sauce": "saucectl run -c ./.sauce/config.yml",
+    "sauce-visual": "saucectl run -c ./.sauce/config.yml --env VISUAL_CHECK=true",
+     "sauce-unique-build": "saucectl run -c ./.sauce/config.yml --env SAUCE_VISUAL_CUSTOM_ID=eyal_custome_build_1110242023 --env SAUCE_VISUAL_BUILD_ID=eyal_build_1110242023"
   },
   "keywords": [],
   "author": "",

@@ -33,6 +33,15 @@ module.exports = defineConfig({
         channel: 'chrome', // This ensures it uses Google Chrome, not just Chromium
       },
     },
+    {
+      name: 'Happy Tests',
+      use: {
+        browserName: 'chromium',
+        viewport: null,
+        channel: 'chrome',
+      },
+      grep: /@happy/, // Only include tests tagged with @web
+    },
     // {
     //   name: 'webkit', // WebKit browser configuration
     //   use: {

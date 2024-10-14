@@ -23,11 +23,18 @@ suites:
   #     project: "firefox" # Runs the project that's defined in `playwright.config.js`
   - name: "chrome Mac"
     platformName: "macOS 12"
-    screenResolution: "1440x900"
+    # screenResolution: "1440x900"
+    screenResolution: "1024x768"
     testMatch: [".*.ts"]
+    shard: concurrency
+    # numShards: 2
+    shardGrepEnabled: true
     params:
       browserName: "chrome"
       project: "chrome"
+      # workers: 2
+      grep: "@happy"       # Only include tests tagged with @smoke
+      # grepInvert: "@slow"  # Exclude tests tagged with @slow
     env:
       SAUCE_USERNAME: $SAUCE_USERNAME
       SAUCE_ACCESS_KEY: $SAUCE_ACCESS_KEY

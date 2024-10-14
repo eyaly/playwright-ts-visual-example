@@ -7,11 +7,11 @@ test.beforeEach(async ({ page }, testInfo) => {
   await expect(page).toHaveTitle(/Swag Labs/);
 })
 
-test('loads the login page @happy', async ({ page }, testInfo) => {
+test('loads the login page 3 @happy', async ({ page }, testInfo) => {
   await sauceVisualCheck(page, testInfo, "Before Login");
 });
 
-test('should be able to login with standard user @happy', async ({ page }, testInfo) => {
+test('should be able to login with standard user 3 @happy', async ({ page }, testInfo) => {
 
   await page.fill('#user-name', process.env.VISUAL_CHECK ? 'visual_user' : 'standard_user'); // Using the id selector for the username
   await page.fill('#password', 'secret_sauce');
@@ -30,7 +30,7 @@ test('should be able to login with standard user @happy', async ({ page }, testI
   );
 });
 
-test('should not be able to login with a locked user', async ({ page }, testInfo) => {
+test('should not be able to login with a locked user 3', async ({ page }, testInfo) => {
 
       await page.fill('#user-name','locked_out_user');
       await page.fill('#password', 'secret_sauce');
